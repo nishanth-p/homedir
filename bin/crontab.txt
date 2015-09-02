@@ -1,0 +1,11 @@
+MAIL=""
+
+SHELL=/bin/bash
+PATH=/usr/bin:/bin:/home/nishanth/bin
+
+# Clean the crontab log file
+@daily echo `date`": Clean crontab log file" > $HOME/crontab.log
+
+# Find the home directory space usage
+15 4 * * * cd /home/nishanth && echo `date`": Space used: "`du -sh` >> $HOME/crontab.log
+
