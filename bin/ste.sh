@@ -3,12 +3,14 @@
 #	and setting up them for vi. Sets the following envirnoment
 #	variables.
 
+export USERNAME=`whoami`
+
 export CS_GEN_TYPE=
 if [ -n "$1" ]; then
 	export CS_GEN_TYPE=$1
 fi
 export CS_SOURCE_FOLDER=${PWD}
-export CSCOPE_DIR=/home/nishanth/cscope_files${CS_SOURCE_FOLDER}
+export CSCOPE_DIR=/home/${USERNAME}/cscope_files${CS_SOURCE_FOLDER}
 export CSCOPE_FL=${CSCOPE_DIR}/cscope.files
 export CSCOPE_DB=${CSCOPE_DIR}/cscope.out
 
