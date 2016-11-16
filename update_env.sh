@@ -1,5 +1,5 @@
 cp .vim ~/ -rf
-cp bin ~/
+cp bin ~/ -rf
 cp .vimrc ~/
 cp .gdbinit ~/
 vimdiff bashrc_template ~/.bashrc
