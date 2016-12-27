@@ -7,7 +7,6 @@ cs_linux_common_src_gen()
 {
 	find  ${CS_SOURCE_FOLDER}					\
 		-path "${CS_SOURCE_FOLDER}/arch/*" -prune -o		\
-		-path "${CS_SOURCE_FOLDER}/tmp*" -prune -o		\
 		-path "${CS_SOURCE_FOLDER}/Documentation*" -prune -o	\
 		-path "${CS_SOURCE_FOLDER}/scripts*" -prune -o		\
 		-name "*.[chxsS]" -print -o \
@@ -30,35 +29,13 @@ cs_linux_common_src_gen()
 cs_linux_src_gen()
 {
 	cs_linux_common_src_gen
-	find	"${CS_SOURCE_FOLDER}/arch/arm/mach-omap1/"	\
-		"${CS_SOURCE_FOLDER}/arch/arm/mach-omap2/"	\
-		"${CS_SOURCE_FOLDER}/arch/arm/mach-msm/"	\
-		"${CS_SOURCE_FOLDER}/arch/arm/mach-tegra/"	\
-		"${CS_SOURCE_FOLDER}/arch/arm/mach-exynos/"	\
-		"${CS_SOURCE_FOLDER}/arch/arm/mach-exynos4/"	\
-		"${CS_SOURCE_FOLDER}/arch/arm/plat-omap/"	\
-		"${CS_SOURCE_FOLDER}/arch/arm/plat-samsung/"	\
+	find	"${CS_SOURCE_FOLDER}/arch/arm/mach-berlin/"	\
 		-name "*.[chxsS]" -print -o \
 		-name "Makefile" -print -o \
 		-name "Kconfig" -print \
 		>> ${CSCOPE_FL}
 	echo "Folder assumed as linux source"
 }
-
-cs_ukernel_src_gen()
-{
-	find	"${CS_SOURCE_FOLDER}/appl/avb/"			\
-		"${CS_SOURCE_FOLDER}/core/src/"			\
-		"${CS_SOURCE_FOLDER}/core/devs/"		\
-		"${CS_SOURCE_FOLDER}/robo/"			\
-		"${CS_SOURCE_FOLDER}/core/BSP/ROBO/"		\
-		-name "*.[chxsS]" -print -o \
-		-name "Makefile" -print -o \
-		-name "*.py" -print \
-		>> ${CSCOPE_FL}
-	echo "Folder assumed as uKernel source"
-}
-
 
 cs_general_src_gen()
 {
@@ -89,8 +66,6 @@ cd /
 
 if [ "${CS_GEN_TYPE}" = "l" ]; then
 	cs_linux_src_gen
-elif [ "${CS_GEN_TYPE}" = "uk" ]; then
-	cs_ukernel_src_gen
 else
 	cs_general_src_gen
 fi

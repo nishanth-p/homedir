@@ -16,8 +16,6 @@ export CSCOPE_DB=${CSCOPE_DIR}/cscope.out
 
 if [ "${CS_GEN_TYPE}" = "l" ]; then
 	echo "Cscope env for ${CS_SOURCE_FOLDER} as type linux"
-elif [ "${CS_GEN_TYPE}" = "uk" ]; then
-	echo "Cscope env for ${CS_SOURCE_FOLDER} as type uKernel"
 else
 	echo "Cscope env for ${CS_SOURCE_FOLDER} as general C/C++"
 fi
