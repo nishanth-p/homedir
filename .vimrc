@@ -37,9 +37,10 @@ set novb				" No visual bell
 set noeb				" No error bell (sound)
 set hid					" Allow switching dirty files
 set nu					" Enable line number display
-set sw=8				" Shift width for intendation
-set ts=8				" Size of tab
-set bs=indent,eol,start	" Backspace in insert mode
+set sw=4				" Shift width for intendation
+set ts=4				" Size of tab
+set expandtab				" Expand tab to spaces"
+set bs=indent,eol,start			" Backspace in insert mode
 set tw=0				" Don't wrap words
 set ls=2				" Display status always
 set ru					" Display cursor position status
